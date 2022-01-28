@@ -1,7 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import random
-from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
 import math
 class Palet:
     __L = 60
@@ -12,7 +10,7 @@ class Palet:
 
     def palet_show(self):
 
-        # print(self.__place)
+
         return self.__place
 
     def check_place(self, a, b, c, ii, jj, ee):
@@ -73,7 +71,7 @@ if __name__ == '__main__':
     file = open('data.txt', 'r')
     box_data = file.read()
     box_data = box_data.split('\n')
-    #random.shuffle(box_data)
+    random.shuffle(box_data)
     print(box_data)
     box_number = len(box_data)
 
@@ -112,7 +110,6 @@ if __name__ == '__main__':
             x, y, z = P.add_box(box_param[min_x][0], box_param[min_x][1], box_param[min_x][2], a, b, c)
         if not (max_val >= 60 * 40 * 100):
             empty_space = empty_space + max_val
-        #print('Коордтнаты: X ' + str((x + a/2)*20) + ' Y: ' + str((y + b/2)*20) + ' Z: ' + str(z * 20))
         print(str(x) + ' ' + str(y) + ' ' + str(z))
 
         Z[0, :] = x, y, z
