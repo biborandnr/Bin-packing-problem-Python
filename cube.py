@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+import random
 class Palet:
     __L = 60
     __W = 40
@@ -13,7 +14,7 @@ class Palet:
 
         return self.__place
 
-    def check_place(self, a, b, c, ii, jj, ee):
+    def check_place(self, a, b, c):
 
         full = False
         empty_space = 0
@@ -75,9 +76,7 @@ if __name__ == '__main__':
     print(box_data)
     box_number = len(box_data)
 
-    ii = 0
-    jj = 0
-    ee = 0
+
 
     for box in range(int(box_number)):
 
@@ -93,7 +92,7 @@ if __name__ == '__main__':
         abc = [[a, b, c], [b, a, c], [a, c, b], [b, c, a], [c, a, b], [c, b, a]]
         for l in range(2):
             a, b, c = abc[l][:]
-            box_param[l][:] = P.check_place(a, b, c, ii, jj, ee)
+            box_param[l][:] = P.check_place(a, b, c)
             if box_param[l][3] == 0:
                 x, y, z = P.add_box(box_param[l][0], box_param[l][1], box_param[l][2], a, b, c)
                 box_placed = True
